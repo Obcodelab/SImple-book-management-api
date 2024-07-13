@@ -24,6 +24,10 @@ class Book(BaseModel):
 # In-memory database
 books_db = {}
 
+# Endpoint to test the API
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Simple Book Management API."}
 
 # Endpoint to create a new book
 @app.post("/books", response_model=Book)
